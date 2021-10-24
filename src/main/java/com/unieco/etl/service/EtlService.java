@@ -40,14 +40,14 @@ public class EtlService {
     }
 
     private void extractByUser(PersonEntity personEntity) {
-        Optional<WorkerEntity> workerOp = workerRepository.findById(personEntity.getId());
+        Optional<WorkerEntity> workerOp = workerRepository.findByIdUser(personEntity.getId());
         UserInput userInput = etlMapper.entityToModel(personEntity);
         User user = uniEcoServiceApi.putUser(userInput);
         workerOp.ifPresent(workerEntity -> extractByWorker(workerEntity, user.getId()));
     }
 
     private void extractByWorker(WorkerEntity workerEntity, Long userApiId) {
-        Optional<AddressEntity> addressEntity = addressRepository.findById(workerEntity.getId());
+        Optional<AddressEntity> addressEntity = addressRepository.findByIdWorker(workerEntity.getId());
         EnterpriseInput enterpriseInput = etlMapper.entityToModel(workerEntity);
         enterpriseInput.setUserId(userApiId);
         Enterprise enterprise = uniEcoServiceApi.putEnterprise(enterpriseInput);
