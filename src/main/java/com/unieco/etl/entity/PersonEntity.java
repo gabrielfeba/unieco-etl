@@ -1,63 +1,63 @@
 package com.unieco.etl.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
-import javax.persistence.Column;
-import java.time.LocalDate;
 
 @Document(collection = "person")
 @Getter
 public class PersonEntity {
 
     @Id
-    @Column(name="_id")
+    @Field("_id")
     private String id;
 
-    @Column(name="Active")
-    private String Active;
+    @Field("Active")
+    private String active;
 
-    @Column(name="BirthDate")
-    private String BirthDate;
+    @Field("BirthDate")
+    private String birthDate;
 
-    @Column(name="CellNumber")
-    private String CellNumber;
+    @Field("CellNumber")
+    private String cellNumber;
 
-    @Column(name="DateLastLogin")
-    private String DateLastLogin;
+    @Field("DateLastLogin")
+    private String dateLastLogin;
 
-    @Column(name="DateRegister")
-    private String DateRegister;
+    @Field("DateRegister")
+    private String dateRegister;
 
-    @Column(name="DateUpdate")
-    private String DateUpdate;
+    @Field("DateUpdate")
+    private String dateUpdate;
 
-    @Column(name="Email")
-    private String Email;
+    @Field("Email")
+    private String email;
 
-    @Column(name="Image")
-    private String Image;
+    @Field("Image")
+    private String image;
 
-    @Column(name="Name")
-    private String Name;
+    @Field("Name")
+    private String name;
 
-    @Column(name="Password")
-    private String Password;
+    @Field("Password")
+    private String password;
 
-    @Column(name="Services")
-    private String Services;
+    @Field("Services")
+    private String services;
 
-    @Column(name="ServicesAccessed")
-    private String ServicesAccessed;
+    @Field("ServicesAccessed")
+    private String servicesAccessed;
 
-    @Column(name="ServicesContact")
-    private String ServicesContact;
+    @Field("ServicesContact")
+    private String servicesContact;
 
-    @Column(name="TypeUser")
-    private String TypeUser;
+    @Field("TypeUser")
+    private String typeUser;
 
-    @Column(name="Username")
-    private String Username;
+    @Field("Username")
+    private String username;
 
 }

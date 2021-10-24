@@ -1,8 +1,10 @@
 package com.unieco.etl.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 import javax.persistence.Column;
 
@@ -11,46 +13,46 @@ import javax.persistence.Column;
 public class AddressEntity {
 
     @Id
-    @Column(name="_id")
+    @Field("_id")
     private String id;
 
-    @Column(name="Active")
+    @Field("Active")
     private String active;
 
-    @Column(name="CEP")
+    @Field("CEP")
     private String cep;
 
-    @Column(name="City")
+    @Field("City")
     private String city;
 
-    @Column(name="Complement")
+    @Field("Complement")
     private String complement;
 
-    @Column(name="DateRegister")
+    @Field("DateRegister")
     private String dateRegister;
 
-    @Column(name="DateUpdate")
+    @Field("DateUpdate")
     private String dateUpdate;
 
-    @Column(name="District")
+    @Field("District")
     private String district;
 
-    @Column(name="IdWorker")
+    @Field("IdWorker")
     private String idWorker;
 
-    @Column(name="Lat")
+    @Field("Lat")
     private String lat;
 
-    @Column(name="Lon")
+    @Field("Lon")
     private String lon;
 
-    @Column(name="Number")
+    @Field("Number")
     private String number;
 
-    @Column(name="State")
+    @Field("State")
     private String state;
 
-    @Column(name="Street")
+    @Field("Street")
     private String street;
 
 

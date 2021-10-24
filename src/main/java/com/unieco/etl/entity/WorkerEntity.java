@@ -1,8 +1,10 @@
 package com.unieco.etl.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 import javax.persistence.Column;
 
@@ -11,52 +13,52 @@ import javax.persistence.Column;
 public class WorkerEntity {
 
     @Id
-    @Column(name="_id")
+    @Field("_id")
     private String id;
 
-    @Column(name="Active")
+    @Field("Active")
     private String active;
 
-    @Column(name="CPFCNPJ")
+    @Field("CPFCNPJ")
     private String cpfCnpj;
 
-    @Column(name="DateRegister")
+    @Field("DateRegister")
     private String dateRegister;
 
-    @Column(name="DateUpdate")
+    @Field("DateUpdate")
     private String dateUpdate;
 
-    @Column(name="Description")
+    @Field("Description")
     private String description;
 
-    @Column(name="EmailCorp")
+    @Field("EmailCorp")
     private String emailCorp;
 
-    @Column(name="Facebook")
+    @Field("Facebook")
     private String facebook;
 
-    @Column(name="IdUser")
+    @Field("IdUser")
     private String idUser;
 
-    @Column(name="Image")
+    @Field("Image")
     private String image;
 
-    @Column(name="Instagram")
+    @Field("Instagram")
     private String instagram;
 
-    @Column(name="Office")
+    @Field("Office")
     private String office;
 
-    @Column(name="PhoneCorp")
+    @Field("PhoneCorp")
     private String phoneCorp;
 
-    @Column(name="Site")
+    @Field("Site")
     private String site;
 
-    @Column(name="SocialReason")
+    @Field("SocialReason")
     private String socialReason;
 
-    @Column(name="WhatsappNumber")
+    @Field("WhatsappNumber")
     private String whatsappNumber;
 
 }

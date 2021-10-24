@@ -36,11 +36,13 @@ public class EtlService {
 
     public void execute() {
         List<PersonEntity> all = personRepository.findAll();
+        List<AddressEntity> allAddress = addressRepository.findAll();
+        List<WorkerEntity> allWorker = workerRepository.findAll();
+        all.forEach(item->uniEcoServiceApi.deleteUserDataForUserName(item.getUsername()));
         all.forEach(this::extractByUser);
     }
 
     private void extractByUser(PersonEntity personEntity) {
-        uniEcoServiceApi.deleteUserDataForUserName(personEntity.getUsername());
         Optional<WorkerEntity> workerOp = workerRepository.findByIdUser(personEntity.getId());
         UserInput userInput = etlMapper.entityToModel(personEntity);
         User user = uniEcoServiceApi.putUser(userInput);
