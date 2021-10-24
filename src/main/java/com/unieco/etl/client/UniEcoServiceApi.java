@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
-@FeignClient(url = "${unieco-url}", name = "UniEco Service")
+@FeignClient(url = "${unieco-url}", name = "UniEcoService")
 public interface UniEcoServiceApi {
 
     @PutMapping("/user")

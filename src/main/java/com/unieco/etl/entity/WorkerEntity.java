@@ -1,9 +1,8 @@
 package com.unieco.etl.entity;
 
 import lombok.Getter;
-import org.hibernate.annotations.CollectionId;
-import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.Column;
 
