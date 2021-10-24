@@ -29,4 +29,7 @@ public interface UniEcoServiceApi {
 
     @PostMapping("/address")
     Address postAddress(@RequestBody Address address);
+
+    @DeleteMapping("/user/data/{username}")
+    Optional<User> deleteUserDataForUserName(@PathVariable("username") String username);
 }

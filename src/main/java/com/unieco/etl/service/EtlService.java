@@ -40,6 +40,7 @@ public class EtlService {
     }
 
     private void extractByUser(PersonEntity personEntity) {
+        uniEcoServiceApi.deleteUserDataForUserName(personEntity.getUsername());
         Optional<WorkerEntity> workerOp = workerRepository.findByIdUser(personEntity.getId());
         UserInput userInput = etlMapper.entityToModel(personEntity);
         User user = uniEcoServiceApi.putUser(userInput);
