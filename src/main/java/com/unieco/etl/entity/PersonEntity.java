@@ -5,6 +5,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.Column;
+import java.time.LocalDate;
 
 @Document(collection = "person")
 @Getter
@@ -18,7 +19,7 @@ public class PersonEntity {
     private String Active;
 
     @Column(name="BirthDate")
-    private String BirthDate;
+    private LocalDate BirthDate;
 
     @Column(name="CellNumber")
     private String CellNumber;
