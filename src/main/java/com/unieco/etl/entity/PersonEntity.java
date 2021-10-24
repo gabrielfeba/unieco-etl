@@ -19,7 +19,7 @@ public class PersonEntity {
     private String Active;
 
     @Column(name="BirthDate")
-    private LocalDate BirthDate;
+    private String BirthDate;
 
     @Column(name="CellNumber")
     private String CellNumber;

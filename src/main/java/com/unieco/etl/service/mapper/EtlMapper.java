@@ -6,6 +6,7 @@ import com.unieco.etl.client.model.UserInput;
 import com.unieco.etl.entity.AddressEntity;
 import com.unieco.etl.entity.PersonEntity;
 import com.unieco.etl.entity.WorkerEntity;
+import com.unieco.etl.utils.DateUtils;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -26,7 +27,7 @@ public class EtlMapper {
 
     public UserInput entityToModel(PersonEntity personEntity) {
         UserInput user = new UserInput();
-        user.setBirthDate(personEntity.getBirthDate());
+        user.setBirthDate(DateUtils.convertGenericDate(personEntity.getBirthDate()));
         user.setEmail(personEntity.getEmail());
         user.setName(personEntity.getName());
         user.setPassword(personEntity.getPassword());

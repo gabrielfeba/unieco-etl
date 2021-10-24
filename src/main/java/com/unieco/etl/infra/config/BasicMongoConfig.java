@@ -19,7 +19,7 @@ public class BasicMongoConfig {
     @Primary
     @Bean(name = "mongoTemplate")
     public MongoTemplate getMongoTemplate() {
-        return new MongoTemplate(mongo(), "UNIECO_DATABASE");
+        return new MongoTemplate(mongo(), "BoutiquePool");
     }
 
     @Bean
